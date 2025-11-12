@@ -23,7 +23,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-(async function() {
+async function start_lapse() {
     try {
         const lapse_version = "Y2JB Lapse 1.0 by Gezine";
         
@@ -1757,6 +1757,8 @@
             
             await log("Exploit failed - Reboot and try again");
             send_notification("Exploit failed - Reboot and try again");
+
+            kill_youtube();
         }
         
         function rerun_check() {
@@ -1772,6 +1774,9 @@
                 if(is_jailbroken()) {
                     await log("Already Jailbroken");
                     send_notification("Already Jailbroken");
+
+                    kill_youtube();
+
                     return;
                 }                
             } else {
@@ -1788,6 +1793,9 @@
         if(rerun_check()) {
             await log("Restart your PS5 to run Lapse again");
             send_notification("Restart your PS5 to run Lapse again");
+
+            kill_youtube();
+
             return;
         }
 
@@ -1892,14 +1900,12 @@
                 throw e;
             }
             
-            await elf_loader();
+            //await elf_loader(); //autoload.js handles this now
             
             await cleanup();
             
             await log("Lapse finished\nClosing Y2JB...");
             send_notification("Lapse finished\nClosing Y2JB...");
-            
-            kill_youtube();
             
         } catch (e) {
             await log("Lapse error: " + e.message);
@@ -1912,4 +1918,4 @@
         await log("Lapse error: " + e.message);
         await log(e.stack);
     }
-})();
+}

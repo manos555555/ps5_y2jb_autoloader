@@ -185,8 +185,18 @@ async function elf_wait_for_exit(thr_handle, payloadout) {
     await log("out = " + toHex(out));
 }
 
-async function elf_loader() {
+
+let elf_loader_active = false;
+
+async function start_elf_loader() {
+
     try {
+
+        if (elf_loader_active) {
+            log("elf_loader already loaded")
+            return;
+        }
+
         check_jailbroken();
         
         const elfldr_data_path = "/data/elfldr.elf";
@@ -208,9 +218,12 @@ async function elf_loader() {
         const { thr_handle, payloadout } = await elf_run(elf_entry_point, existing_path);
         await elf_wait_for_exit(thr_handle, payloadout);
         
+        elf_loader_active = true;
+
         await log("done");
     } catch (e) {
         await log("Error: " + e.message);
         throw e;
     }
 }
+

@@ -7,7 +7,11 @@
 
 const version_string = "Y2JB 1.2 by Gezine";
 
-function load_localscript(src) {
+const autoloader_version_string = "Autoloader v0.1 by PLK";
+
+
+
+async function load_localscript(src) {
     return new Promise((resolve, reject) => {
         const script = document.createElement('script');
         script.src = src;
@@ -879,6 +883,8 @@ function trigger() {
         FW_VERSION = get_fwversion();
         
         send_notification(version_string + "\nFW : " + FW_VERSION);
+        send_notification("\n" + autoloader_version_string + "\n");
+
         await log("FW detected : " + FW_VERSION);
         
         await log("libkernel_base @ " + toHex(libkernel_base));
@@ -901,13 +907,31 @@ function trigger() {
         await load_localscript('kernel.js');
         await load_localscript('kernel_offset.js');
         await load_localscript('gpu.js');
+
         await load_localscript('elf_loader.js');
         
         ////////////////////
         // MAIN EXECUTION //
         ////////////////////
-        
-        await load_localscript('remotejsloader.js');
+
+
+        // wait a bit before running lapse,
+        // so it's easier to upload new files via ftp
+        function sleep(ms) {
+            return new Promise((resolve) => setTimeout(resolve, ms));
+        }
+        await sleep(3000);
+
+
+        await load_localscript('lapse.js');
+        await load_localscript('autoload.js');
+
+        await start_lapse();
+        await start_autoload();
+
+        send_notification("Autoload finished.\nClosing YT app");
+        kill_youtube();
+
         
     } catch (e) {                
         await log('EXCEPTION: ' + e.message);
