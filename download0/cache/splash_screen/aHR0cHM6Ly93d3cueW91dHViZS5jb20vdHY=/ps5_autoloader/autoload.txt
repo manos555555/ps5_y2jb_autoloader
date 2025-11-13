@@ -16,5 +16,4 @@
 # Note: The kernel exploit and elf_loader start automatically — do NOT include them here.
 #
 
-helloworld.js
 ftpsrv-ps5_v0.13.elf
