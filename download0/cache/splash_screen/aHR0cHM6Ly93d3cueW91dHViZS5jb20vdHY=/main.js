@@ -7,7 +7,7 @@
 
 const version_string = "Y2JB 1.2.1 by Gezine";
 
-const autoloader_version_string = "Autoloader v0.2.1 by PLK";
+const autoloader_version_string = "Autoloader v0.2.2 by PLK";
 
 
 
@@ -914,15 +914,6 @@ function trigger() {
         // MAIN EXECUTION //
         ////////////////////
 
-
-        // wait a bit before running lapse,
-        // so it's easier to upload new files via ftp
-        function sleep(ms) {
-            return new Promise((resolve) => setTimeout(resolve, ms));
-        }
-        await sleep(3000);
-
-
         await load_localscript('lapse.js');
         await load_localscript('update.js');
         await load_localscript('autoload.js');
@@ -934,7 +925,6 @@ function trigger() {
         send_notification("Autoload finished.\nClosing YT app");
         kill_youtube();
 
-        
     } catch (e) {                
         await log('EXCEPTION: ' + e.message);
         await log(e.stack);
