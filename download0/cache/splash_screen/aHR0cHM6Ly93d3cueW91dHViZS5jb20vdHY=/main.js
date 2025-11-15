@@ -7,7 +7,7 @@
 
 const version_string = "Y2JB 1.2.1 by Gezine";
 
-const autoloader_version_string = "Autoloader v0.2 by PLK";
+const autoloader_version_string = "Autoloader v0.2.1 by PLK";
 
 
 
