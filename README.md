@@ -6,7 +6,7 @@ Automatically loads the kernel exploit, elf_loader, your elf payloads, and .js s
 
 Supports PS5 firmwares 4.03-10.01
 
-## How to use
+## How to Use
 
 - Create a directory named `ps5_autoloader`.
 - Inside this directory, place your `.elf`, `.bin`, and `.js` files, and an `autoload.txt` file.
@@ -19,11 +19,13 @@ Supports PS5 firmwares 4.03-10.01
   - Internal drive: `/data/ps5_autoloader`
   - The YT's splash_screen folder: `download0/cache/splash_screen/aHR0cHM6Ly93d3cueW91dHViZS5jb20vdHY=/ps5_autoloader`
 
+## How to Update
+
+Since version **v0.2**, you can update the autoloader by simply placing **`y2jb_update.zip`** (from the [Releases page](https://github.com/itsPLK/ps5_y2jb_autoloader/releases)) on the **root** of a USB drive, and starting the app.
 
 ## Setup Instructions
 
 If you're jailbroken, you can setup it manually just like the original [Y2JB](https://github.com/Gezine/Y2JB/blob/main/README.md).  
-There's no pre-made backups yet.
 
 ## Credits
 
