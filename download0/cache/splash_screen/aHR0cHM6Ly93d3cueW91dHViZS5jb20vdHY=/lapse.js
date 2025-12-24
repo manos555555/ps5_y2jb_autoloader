@@ -25,7 +25,7 @@
 
 async function start_lapse() {
     try {
-        const lapse_version = "Y2JB Lapse 1.0 by Gezine";
+        const lapse_version = "Y2JB Lapse 1.0 Stable+ (Minor Improvements)";
         
         let failcheck_path;
 
@@ -36,10 +36,10 @@ async function start_lapse() {
         const NUM_HANDLES = 0x100;
         const NUM_SDS = 64;
         const NUM_SDS_ALT = 48;
-        const NUM_RACES = 100;
-        const NUM_ALIAS = 100;
+        const NUM_RACES = 120;
+        const NUM_ALIAS = 120;
         const LEAK_LEN = 16;
-        const NUM_LEAKS = 16;
+        const NUM_LEAKS = 20;
         const NUM_CLOBBERS = 8;
         const MAX_AIO_IDS = 0x80;
 
