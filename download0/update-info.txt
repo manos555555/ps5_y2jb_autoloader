@@ -1,0 +1,16 @@
+﻿autoload.js|11042
+elf_loader.js|9794
+elfldr.elf|380616
+global.js|4643
+gpu.js|14469
+icon0.png|15236
+icon_update.js|5383
+kernel.js|14741
+kernel_offset.js|9901
+lapse.js|76362
+main.js|41480
+misc.js|15465
+ps5_autoloader/autoload.txt|889
+ps5_autoloader/ftpsrv-ps5_v0.13.elf|138064
+splash.html|596
+update.js|63585

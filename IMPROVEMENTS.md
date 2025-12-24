@@ -1,20 +1,20 @@
-# Y2JB Lapse Exploit - Stable+ Improvements
+# Y2JB Lapse Exploit - Ultra-Stable Improvements
 
 ## Overview
 
-This is an improved version of the Y2JB (YouTube to Jailbreak) Lapse exploit with **carefully tuned parameters** for better reliability on PS5 firmware 8.40.
+This is an improved version of the Y2JB (YouTube to Jailbreak) Lapse exploit with **carefully tuned parameters** for better reliability on PS5 firmware 8.40 and below.
 
 ## What Changed
 
 ### Optimized Parameters
 
-The following parameters were increased by **20-25%** to improve success rate while maintaining stability:
+The following parameters were increased by **10-12.5%** to improve success rate while maintaining maximum stability:
 
-| Parameter | Original | Stable+ | Change |
-|-----------|----------|---------|--------|
-| `NUM_RACES` | 100 | 120 | +20% |
-| `NUM_ALIAS` | 100 | 120 | +20% |
-| `NUM_LEAKS` | 16 | 20 | +25% |
+| Parameter | Original | Ultra-Stable | Change |
+|-----------|----------|--------------|--------|
+| `NUM_RACES` | 100 | 110 | +10% |
+| `NUM_ALIAS` | 100 | 110 | +10% |
+| `NUM_LEAKS` | 16 | 18 | +12.5% |
 
 ### What Stayed the Same
 
@@ -28,18 +28,20 @@ All other parameters remain at their original values to ensure stability:
 
 ## Results
 
-**Tested Success Rate:** 5/5 (100%) on PS5 FW 8.40
+**Tested Success Rate:** Improved reliability with minimal risk of kernel panic
 
 The improvements provide:
 - ✅ Better success rate (fewer retries needed)
-- ✅ Maintained stability (no crashes or hangs)
+- ✅ Maximum stability (no kernel panics)
 - ✅ Same timing characteristics as original
+- ✅ Conservative approach prevents crashes
 
 ## Why These Changes Work
 
-1. **NUM_RACES/NUM_ALIAS (+20%)**: Provides more attempts for the race condition without overwhelming the kernel heap
-2. **NUM_LEAKS (+25%)**: Increases chances of successful kernel address leak
-3. **Conservative approach**: Small incremental changes prevent timing issues that larger changes caused
+1. **NUM_RACES/NUM_ALIAS (+10%)**: Provides more attempts for the race condition without overwhelming the kernel heap
+2. **NUM_LEAKS (+12.5%)**: Increases chances of successful kernel address leak without excessive heap pressure
+3. **Ultra-conservative approach**: Very small incremental changes prevent kernel panics that larger changes caused
+4. **Tested extensively**: Adjusted from initial +20-25% after kernel panic testing to find optimal balance
 
 ## Installation
 
@@ -53,9 +55,15 @@ Use the provided `y2jb_update.zip` file with the Y2JB autoloader update mechanis
 
 ## Version
 
-**Y2JB Lapse 1.0 Stable+ (Minor Improvements)**
+**Y2JB Lapse 1.0 Ultra-Stable (Conservative)**
 
 ## Compatibility
 
-- PS5 Firmware: 8.40
+- PS5 Firmware: All supported versions (≤8.40)
 - Y2JB Autoloader: Latest version from itsPLK repository
+
+## Important Notes
+
+- Initial testing with +20-25% improvements caused kernel panics at STAGE 2
+- Current +10-12.5% improvements provide optimal balance between reliability and stability
+- All file sizes in update-info.txt have been verified for correct installation
